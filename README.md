@@ -10,6 +10,7 @@
 - has_many :tweets
 - has_many :comments
 
+
 ## tweetsテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -30,13 +31,14 @@
 - belongs_to :tweet
 - belongs_to :user
 
+
 ## tagsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |text|text|null: false|
 ### Association
 - has_many :posts_tags
-- has_many :posts, through: :posts_tags
+- has_many :posts, through: :tweets_tags
 
 ## tweets_tagsテーブル
 |Column|Type|Options|
