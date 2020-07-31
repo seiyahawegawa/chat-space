@@ -38,11 +38,11 @@
 - has_many :posts_tags
 - has_many :posts, through: :posts_tags
 
-## posts_tagsテーブル
+## tweets_tagsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |post_id|integer|null: false, foreign_key: true|
 |tag_id|integer|null: false, foreign_key: true|
 ### Association
-- belongs_to :post
+- belongs_to :tweet
 - belongs_to :tag
