@@ -7,44 +7,36 @@
 |password|string|null: false|
 |nickname|string|null: false|
 ### Association
-- has_many :tweets
-- has_many :comments
+- has_many :groups
+- has_many :messags
 
 
-## tweetsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|image|text||
-|text|text||
-|user_id|integer|null: false, foreign_key: true|
-### Association
-- belongs_to :user
-- has_many :comments
-
-## commentsテーブル
+## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |text|text|null: false|
 |user_id|integer|null: false, foreign_key: true|
 |tweet_id|integer|null: false, foreign_key: true|
 ### Association
-- belongs_to :tweet
+- belongs_to :group
 - belongs_to :user
 
-
-## tagsテーブル
+## groups
 |Column|Type|Options|
 |------|----|-------|
 |text|text|null: false|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
 ### Association
-- has_many :posts_tags
-- has_many :posts, through: :tweets_tags
+- belongs_to :message
+- belongs_to :user
 
-## tweets_tagsテーブル
+
+## groups_users
 |Column|Type|Options|
 |------|----|-------|
 |post_id|integer|null: false, foreign_key: true|
 |tag_id|integer|null: false, foreign_key: true|
 ### Association
-- belongs_to :tweet
-- belongs_to :tag
+- belongs_to :group
+- belongs_to :user
