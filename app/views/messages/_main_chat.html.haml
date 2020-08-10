@@ -1,0 +1,27 @@
+.main-chat
+  .main-chat__header
+    .groups
+      .groups__name
+        test
+      .groups__membar
+        membar : masa
+    .main-chat__edit
+      =link_to '#'  do
+        edit
+  .main-chat__message-list 
+    .info
+      .info__name
+        masa 
+        .info__time-posted
+          2020/08/9  14:59
+      .info__coment
+        おはよう
+  
+  .main-chat__footer
+    %form.form
+      .input-box
+        %input{type:"text",  class:"input-box__text",  placeholder:"type a message"}
+          %label{class:"input-box__image"}
+            = icon('fas', 'image')
+            %input{type:"file", class:"input-box__image__file"}
+    %input{type:"submit", class:"submit-btn", value:"Send"} 
