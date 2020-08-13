@@ -1,0 +1,21 @@
+.side-bar
+  .side-bar__header
+    .top-items
+      %p.top-items__name hasegawa
+      %ul.top-items__icon 
+        %li.icon__left
+          = link_to "#" do
+            = icon('far', 'edit')
+        %li.icon__right
+          = link_to "#" do
+            = icon('fas', 'cog')
+   
+  .side-bar__groups 
+    .side-bar__groups__list
+      =link_to "#" do
+        .side-bar__groups__list__name
+          techcamp
+        .side-bar__groups__list__messages
+          まだメッセージがありません
+    
+    
