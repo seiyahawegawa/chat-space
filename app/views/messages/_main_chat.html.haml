@@ -2,26 +2,25 @@
   .main-chat__header
     .groups
       .groups__name
-        test
+        = @group.name
       .groups__membar
-        membar : masa
+        membar:
+        - @group.users.each do |user|
+          = user.name
     .main-chat__edit
-      =link_to '#'  do
+      = link_to edit_group_path(@group) do
         edit
-  .main-chat__message-list 
-    .info
-      .info__name
-        masa 
-        .info__time-posted
-          2020/08/9  14:59
-      .info__coment
-        おはよう
+  
+  .main-chat__message-list
+    = render @messages
   
   .main-chat__footer
-    %form.form
+    = form_with model: [@group, @message], html: {class: "form"}, local: true do |f|
       .input-box
-        %input{type:"text",  class:"input-box__text",  placeholder:"type a message"}
-          %label{class:"input-box__image"}
-            = icon('fas', 'image')
-            %input{type:"file", class:"input-box__image__file"}
-    %input{type:"submit", class:"submit-btn", value:"Send"} 
+        = f.text_field :text, class: 'input-box__text', placeholder: 'type a message'
+        = f.label :image, class: 'input-box__image' do
+          = icon('far', 'image')
+          = f.file_field :image, class: 'input-box__image__file'
+        = f.submit 'Send', class: 'submit-btn'
+         
+    
