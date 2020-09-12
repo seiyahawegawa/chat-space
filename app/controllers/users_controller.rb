@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def edit
-   endindex.json.jbuilder
+  #  endindex.json.jbuilder
   end
 
   def update
